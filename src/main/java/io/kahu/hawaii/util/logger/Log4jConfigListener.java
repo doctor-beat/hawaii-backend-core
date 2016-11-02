@@ -31,6 +31,8 @@ public class Log4jConfigListener implements ServletContextListener {
         if (StringUtils.isBlank(config)) {
             config = System.getProperty("log4j.configuration");
         }
+
+        sce.getServletContext().log(">>>>>>>> WARNING: modified version Log4jConfigListener.java!!! <<<<<<<<<<<");
         if (StringUtils.isNotEmpty(config)) {
             String overrideConfig = StringUtils.replace(config, ".xml", ".local.xml");
             if (!configureAndWatch(overrideConfig)) {
@@ -43,6 +45,7 @@ public class Log4jConfigListener implements ServletContextListener {
     }
 
     private boolean configureAndWatch(String cfg) {
+        cfg = cfg.replaceAll("^file:", "");
         File configFile = new File(cfg);
         if (configFile.exists()) {
             DOMConfigurator.configureAndWatch(cfg);
