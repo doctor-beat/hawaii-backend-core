@@ -100,10 +100,10 @@ public class DefaultResponseManager implements ResponseManager {
 
     private boolean mustLog(Throwable throwable) {
         if (throwable instanceof ValidationException) {
-            return false;
+            //return false;
         }
         if (throwable instanceof AuthorisationException) {
-            return false;
+            //return false;
         }
         return true;
     }
