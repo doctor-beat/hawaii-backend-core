@@ -189,6 +189,7 @@ public class KahuConfig {
         properties.put("mail.transport.protocol", env.getProperty("mail.transport.protocol"));
         properties.put("mail.smtp.starttls.enable", env.getProperty("mail.smtp.starttls.enable"));
         properties.put("mail.smtp.host", env.getProperty("mail.smtp.host"));
+        properties.put("mail.smtp.port", env.getProperty("mail.smtp.port", "25"));
         properties.put("mail.smtp.socketFactory.port", env.getProperty("mail.smtp.socketFactory.port"));
         properties.put("mail.smtp.port", env.getProperty("mail.smtp.socketFactory.port"));
         properties.put("mail.smtp.socketFactory.class", env.getProperty("mail.smtp.socketFactory.class"));
